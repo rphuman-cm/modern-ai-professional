@@ -1,41 +1,29 @@
-import './globals.css'
+import '../styles/globals.css'
 
 export const metadata = {
-  title: 'Modern AI Professional — AI Competence for the Work That Actually Matters',
+  title: {
+    default: 'Modern AI Professional — AI Competence for the Work That Actually Matters',
+    template: '%s | Modern AI Professional',
+  },
   description:
-    'Modern AI Professional helps working professionals develop practical AI competence using the J.E.T. Model: Judgment, Execution, and Trust. Not theory. Professional skill.',
+    'Modern AI Professional helps working professionals develop practical AI competence through the J.E.T. Model: Judgment, Execution, and Trust. Not hype. Professional skill.',
   keywords: [
-    'AI competence',
-    'AI for professionals',
-    'practical AI skills',
-    'AI at work',
-    'JET model',
-    'AI judgment',
-    'professional development',
-    'AI training',
+    'AI competence', 'AI for professionals', 'practical AI skills',
+    'AI at work', 'JET model', 'AI judgment', 'professional development',
+    'AI prompting', 'AI training for managers',
   ],
   openGraph: {
-    title: 'Modern AI Professional',
-    description: 'AI competence for the work that actually matters.',
-    type: 'website',
+    siteName: 'Modern AI Professional',
     locale: 'en_US',
+    type: 'website',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Modern AI Professional',
-    description: 'AI competence for the work that actually matters.',
-  },
-  icons: {
-    icon: '/favicon.svg',
-  },
+  icons: { icon: '/favicon.svg' },
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   )
 }

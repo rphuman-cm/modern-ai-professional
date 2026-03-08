@@ -1,0 +1,189 @@
+/* About.module.css */
+.about {
+  background: var(--deep);
+  position: relative;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 5rem;
+  }
+}
+
+/* Visual column */
+.visualCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Main visual card */
+.visualCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.vcTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.125rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--elevated);
+}
+
+.vcLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.vcVersion {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--orange);
+  background: var(--orange-subtle);
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  border: 1px solid rgba(232,119,34,0.25);
+}
+
+.vcPillars {
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.vcBar { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.vcBarLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.vcBarLetter {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  width: 18px;
+}
+
+.vcBarTrack {
+  height: 6px;
+  background: var(--elevated);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.vcBarFill {
+  height: 100%;
+  border-radius: 100px;
+  opacity: 0.85;
+  transition: width 1s var(--ease-out);
+}
+
+.vcFooter {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+}
+
+.vcStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+.vcStat strong {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.vcStat span {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
+/* Quote card */
+.quoteCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--orange);
+  border-radius: var(--r-md);
+  padding: 1.5rem;
+}
+
+.quoteText {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.quoteSource {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* Text column */
+.textCol {}
+
+.heading {
+  color: var(--text-primary);
+  margin-bottom: 1.75rem;
+}
+
+.em {
+  font-style: italic;
+  color: var(--orange-bright);
+}
+
+.body {
+  margin-bottom: 1.25rem;
+}
+
+/* Role grid */
+.roles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 1.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.role {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}

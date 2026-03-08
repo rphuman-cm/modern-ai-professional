@@ -1,0 +1,187 @@
+/* Hero.module.css */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--black);
+  overflow: hidden;
+  padding-top: 120px;
+  padding-bottom: 8rem;
+}
+
+/* Background layers */
+.bg { position: absolute; inset: 0; pointer-events: none; }
+
+.bgGrid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 90% 70% at 40% 40%, black 30%, transparent 80%);
+}
+
+.bgGlow1 {
+  position: absolute;
+  top: -5%; left: -10%;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle at center,
+    rgba(232,119,34,0.10) 0%,
+    rgba(232,119,34,0.03) 45%,
+    transparent 70%);
+}
+
+.bgGlow2 {
+  position: absolute;
+  bottom: 10%; right: -5%;
+  width: 500px; height: 400px;
+  background: radial-gradient(circle at center,
+    rgba(42,127,202,0.08) 0%,
+    transparent 65%);
+}
+
+.bgNoise {
+  position: absolute; inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* Content */
+.content { position: relative; z-index: 2; max-width: 880px; }
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(232,119,34,0.1);
+  border: 1px solid rgba(232,119,34,0.25);
+  border-radius: 100px;
+  padding: 0.35rem 1rem;
+  margin-bottom: 2rem;
+  color: var(--orange);
+}
+
+.badgeDot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 8px var(--orange);
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(0.8); }
+}
+
+/* Headline */
+.headline {
+  color: var(--text-primary);
+  margin-bottom: 1.75rem;
+}
+
+.hlOrange {
+  background: linear-gradient(135deg, var(--orange), var(--orange-bright));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hlItalic {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+/* Sub */
+.sub {
+  max-width: 620px;
+  margin-bottom: 2.5rem;
+}
+
+/* CTAs */
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  margin-bottom: 4rem;
+}
+
+/* Trust strip */
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.trustItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.trustNum {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--orange-bright);
+  line-height: 1;
+}
+
+.trustLabel {
+  font-size: 0.775rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Scroll button */
+.scrollBtn {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-faint);
+  transition: color 200ms ease;
+  animation: bob 2s ease-in-out infinite;
+}
+.scrollBtn:hover { color: var(--text-muted); }
+@keyframes bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(5px); }
+}
+
+.scrollLine {
+  display: block;
+  width: 1px; height: 32px;
+  background: linear-gradient(to bottom, transparent, currentColor);
+}
+
+/* Gradient fade into next section */
+.fade {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--deep));
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .ctas { flex-direction: column; }
+  .ctas .btn { width: 100%; justify-content: center; }
+  .trust { gap: 1.5rem; }
+}

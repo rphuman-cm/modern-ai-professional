@@ -1,0 +1,181 @@
+/* JET.module.css */
+.jet {
+  background: var(--deep);
+  position: relative;
+}
+
+.header { max-width: 680px; margin-bottom: 4rem; }
+
+.title {
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.intro {
+  max-width: 580px;
+}
+
+/* Pillar grid */
+.pillars {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+@media (min-width: 900px) {
+  .pillars { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Single pillar card */
+.pillar {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--t-std) var(--ease),
+    box-shadow var(--t-std) var(--ease),
+    border-color var(--t-std) var(--ease);
+}
+.pillar:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--pillar-c, var(--orange));
+}
+
+/* Top accent bar colored by pillar */
+.pillarTop {
+  height: 3px;
+  background: var(--pillar-c, var(--orange));
+  width: 100%;
+}
+
+/* Faint watermark letter */
+.watermark {
+  position: absolute;
+  top: 0.5rem; right: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255,255,255,0.025);
+  user-select: none;
+  pointer-events: none;
+  transition: color var(--t-std) ease;
+}
+.pillar:hover .watermark {
+  color: rgba(255,255,255,0.04);
+}
+
+.pillarBody {
+  padding: 2rem 1.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header row inside card */
+.pillarHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.letterBadge {
+  width: 40px; height: 40px;
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.pillarName {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+  letter-spacing: -0.015em;
+}
+
+.pillarTagline {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--pillar-c, var(--orange));
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.pillarText {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.75rem;
+  flex: 1;
+}
+
+/* Points */
+.points {
+  list-style: none; margin: 0; padding: 0;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.pointIcon {
+  color: var(--pillar-c, var(--orange));
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Book tie-in */
+.bookTie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.25rem 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  border-left: 3px solid var(--orange);
+}
+
+.bookTieText { max-width: 580px; }
+
+.bookTieBody {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.bookTitle {
+  font-style: italic;
+  font-family: var(--font-display);
+  color: var(--text-primary);
+}

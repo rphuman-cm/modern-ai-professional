@@ -1,0 +1,194 @@
+/* Footer.module.css */
+
+.footer {
+  background: var(--black);
+  border-top: 1px solid var(--border-soft);
+}
+
+/* ── CTA Band ──────────────────────────────────── */
+.band {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding-block: var(--s16);
+}
+
+.bandInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.bandCopy { max-width: 540px; }
+
+.bandHeading {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 0.75rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.bandActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  flex-shrink: 0;
+}
+
+.bandActions em {
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+/* ── Body ──────────────────────────────────────── */
+.body { }
+
+.bodyInner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 900px) {
+  .bodyInner {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+  }
+}
+
+/* Brand col */
+.brandCol { display: flex; flex-direction: column; gap: 0; }
+
+.logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 1.25rem;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--orange-bright);
+  margin-bottom: 0.875rem;
+  line-height: 1.4;
+}
+
+.desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 380px;
+  margin-bottom: 2rem;
+}
+
+/* Newsletter */
+.newsletter { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.nlLabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.nlForm {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 360px;
+}
+
+.nlInput {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  background: var(--elevated);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-sm);
+  color: var(--text-primary);
+  padding: 0.6rem 0.875rem;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.nlInput::placeholder { color: var(--text-faint); }
+.nlInput:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px var(--orange-glow);
+}
+
+.nlBtn {
+  font-size: 0.8rem !important;
+  padding: 0.6rem 1.1rem !important;
+  flex-shrink: 0;
+}
+
+.nlSuccess {
+  font-size: 0.85rem;
+  color: #22a86e;
+  font-weight: 500;
+}
+
+/* Link grid */
+.linkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 480px) {
+  .linkGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.linkCol { display: flex; flex-direction: column; gap: 1rem; }
+
+.colHead {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.linkCol ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+.fLink {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  transition: color 200ms ease;
+  line-height: 1.5;
+}
+.fLink:hover { color: var(--text-primary); }
+
+/* Bottom */
+.bottom { border-top: 1px solid var(--border-soft); padding-block: 1.25rem; }
+
+.bottomInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.copy { font-size: 0.775rem; color: var(--text-faint); }
+
+.legal { display: flex; gap: 1.5rem; }
+
+.legalLink {
+  font-size: 0.775rem;
+  color: var(--text-faint);
+  transition: color 200ms ease;
+}
+.legalLink:hover { color: var(--text-muted); }

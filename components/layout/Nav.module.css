@@ -1,0 +1,200 @@
+/* Nav.module.css */
+
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  transition: background-color 300ms var(--ease), box-shadow 300ms var(--ease);
+  /* Pure black — logo background is seamless */
+  background-color: #000;
+}
+
+.header.solid {
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* ── Top bar ───────────────────────────────────── */
+.topBar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 0.4rem 0;
+}
+
+.topBarInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.topBarInner em {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+}
+
+.topBarCta {
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  transition: color 200ms ease;
+  white-space: nowrap;
+}
+.topBarCta:hover { color: var(--orange-bright); }
+
+/* ── Main row ──────────────────────────────────── */
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 72px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  /* No padding/bg needed — logo PNG has black background matching nav */
+}
+
+.logoImg {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Desktop nav */
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+@media (min-width: 900px) {
+  .desktopNav {
+    display: flex;
+  }
+}
+
+.desktopNav ul {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+
+.navLink {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--r-sm);
+  transition: color 200ms ease, background-color 200ms ease;
+  letter-spacing: 0.005em;
+  white-space: nowrap;
+}
+.navLink:hover {
+  color: var(--text-primary);
+  background: rgba(255,255,255,0.05);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.bookLink {
+  font-size: 0.825rem !important;
+  padding: 0.55rem 1.1rem !important;
+  color: var(--text-secondary) !important;
+}
+
+/* Hamburger */
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px; height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--r-sm);
+  transition: background 200ms ease;
+}
+.burger:hover { background: var(--surface); }
+
+@media (min-width: 900px) { .burger { display: none; } }
+
+.bLine {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--text-secondary);
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform 250ms var(--ease), opacity 200ms ease;
+}
+.bLine1Open { transform: translateY(7px) rotate(45deg); }
+.bLine2Open { opacity: 0; transform: scaleX(0); }
+.bLine3Open { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu */
+.mobileNav {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  background: var(--black);
+  padding-top: 130px;
+  padding-inline: 1.5rem;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 320ms var(--ease-out), opacity 280ms ease;
+  pointer-events: none;
+  overflow-y: auto;
+  border-left: 1px solid var(--border);
+}
+.mobileNav.mobileOpen {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+}
+@media (min-width: 900px) { .mobileNav { display: none; } }
+
+.mobileLinks {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileLink {
+  display: block;
+  font-size: 1.3rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border-soft);
+  transition: color 200ms ease;
+  letter-spacing: -0.01em;
+}
+.mobileLink:hover { color: var(--text-primary); }
+
+.mobileBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+.mobileBtn {
+  width: 100%;
+  justify-content: center;
+}
