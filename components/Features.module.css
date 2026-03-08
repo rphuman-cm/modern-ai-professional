@@ -1,0 +1,170 @@
+/* Features.module.css */
+
+.features {
+  background-color: var(--paper);
+  position: relative;
+}
+
+/* Section Header */
+.sectionHeader {
+  max-width: 680px;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.sectionIntro {
+  color: var(--slate);
+  font-size: 1.05rem;
+  max-width: 580px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Card */
+.card {
+  position: relative;
+  background-color: var(--white);
+  border: 1px solid var(--fog);
+  border-radius: var(--radius-md);
+  padding: 0;
+  overflow: hidden;
+  transition:
+    box-shadow var(--duration-std) var(--ease-std),
+    transform var(--duration-std) var(--ease-std),
+    border-color var(--duration-std) var(--ease-std);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--silver);
+}
+
+/* Top accent bar */
+.cardAccent {
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  width: 100%;
+}
+
+/* Large background letter */
+.letterMark {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--fog);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  transition: color var(--duration-std) ease;
+}
+
+.card:hover .letterMark {
+  color: var(--accent-glow);
+}
+
+/* Card Content */
+.cardContent {
+  padding: 2rem 1.75rem 2.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.cardTitle {
+  font-size: 1.75rem !important;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.cardTagline {
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.cardDesc {
+  font-size: 0.925rem;
+  color: var(--slate);
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+  flex: 1;
+}
+
+/* Points */
+.pointList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 1px solid var(--fog);
+  padding-top: 1.5rem;
+}
+
+.point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.825rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.pointIcon {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Bottom CTA */
+.bottomCta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--fog);
+}
+
+.bottomCtaText {
+  font-size: 0.95rem;
+  color: var(--slate);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.bottomCtaText em {
+  color: var(--ink);
+  font-style: italic;
+  font-family: var(--font-display);
+}
